@@ -31,7 +31,7 @@
             .setOnSelectedResultListener(new OnSelectedResultListener() {
                 @Override
                 public void SelectedData(String province, String city, String area, String street) {
-                    tv_address.setText(province + city + area + street);
+                    tv_address.setText(new StringBuilder().append(province).append(city).append(area).append(street));
                 }
             });
 
