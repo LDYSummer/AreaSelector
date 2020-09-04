@@ -1,6 +1,6 @@
 # AreaSelector
-[![](https://jitpack.io/v/LDYSummer/AreaSelector.svg)](https://jitpack.io/#LDYSummer/AreaSelector)
 四级联动地址选择器
+[![](https://jitpack.io/v/LDYSummer/AreaSelector.svg)](https://jitpack.io/#LDYSummer/AreaSelector)
 
 - 默认国家统计局数据
 - 一句代码即可使用
@@ -38,7 +38,6 @@
 ```
 
 #### 自定义数据及item选中事件
-- 仅finish
 ```javascript
     new AreaSelector(this)
             .showSelector()
