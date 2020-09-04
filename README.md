@@ -37,7 +37,7 @@
 
 ```
 
-#### 自定义数据及item选中事件
+#### 自定义数据
 ```javascript
     new AreaSelector(this)
             .showSelector()
