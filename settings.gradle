@@ -1,0 +1,3 @@
+include ':areaselectorlibrary'
+include ':app'
+rootProject.name = "AreaSelector"

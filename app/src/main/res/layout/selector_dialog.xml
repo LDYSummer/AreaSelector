@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:text="@string/selector_title"
+                android:textColor="@color/text_black_high"
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:src="@drawable/ic_close"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/tv_province"
+                android:text="@string/selector_text_default"
+                android:textSize="14sp"
+                android:textColor="@color/text_red"
+                android:layout_marginStart="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_city"
+                android:text="@string/selector_text_default"
+                android:textSize="14sp"
+                android:textColor="@color/text_red"
+                android:layout_marginStart="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_area"
+                android:text="@string/selector_text_default"
+                android:textSize="14sp"
+                android:textColor="@color/text_red"
+                android:layout_marginStart="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_street"
+                android:text="@string/selector_text_default"
+                android:textSize="14sp"
+                android:textColor="@color/text_red"
+                android:layout_marginStart="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <View
+            android:background="@color/line_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:visibility="gone"
+                android:id="@+id/lv_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:overScrollMode="never"
+                android:listSelector="@android:color/transparent"/>
+
+            <ListView
+                android:visibility="gone"
+                android:id="@+id/lv_area"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:overScrollMode="never"
+                android:listSelector="@android:color/transparent"/>
+
+            <ListView
+                android:visibility="gone"
+                android:id="@+id/lv_street"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:overScrollMode="never"
+                android:listSelector="@android:color/transparent"/>
+
+            <ListView
+                android:id="@+id/lv_province"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:overScrollMode="never"
+                android:listSelector="@android:color/transparent"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

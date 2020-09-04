@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AreaSelector</string>
+
+    <string name="selector_title">请选择所在地区</string>
+    <string name="selector_text_default">请选择</string>
+
+</resources>
