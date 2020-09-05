@@ -130,7 +130,7 @@ public class AreaSelector {
                 tv_street.setTextColor(mContext.getResources().getColor(R.color.text_black_high));
             }
         });
-        tv_street.setOnClickListener(new View.OnClickListener() {
+        tv_area.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 lv_city.setVisibility(View.GONE);
@@ -171,7 +171,6 @@ public class AreaSelector {
                                 return;
                             }
                             tv_province.setText(provinceList.get(position).getName());
-                            tv_province.setEnabled(true);
                             tv_city.setVisibility(View.VISIBLE);
 
                             tv_province.setTextColor(mContext.getResources().getColor(R.color.text_black_high));
@@ -203,7 +202,6 @@ public class AreaSelector {
                                 return;
                             }
                             tv_city.setText(cityList.get(position).getName());
-                            tv_city.setEnabled(true);
                             tv_area.setVisibility(View.VISIBLE);
 
                             tv_province.setTextColor(mContext.getResources().getColor(R.color.text_black_high));
@@ -235,7 +233,6 @@ public class AreaSelector {
                                 return;
                             }
                             tv_area.setText(areaList.get(position).getName());
-                            tv_area.setEnabled(true);
                             tv_street.setVisibility(View.VISIBLE);
 
                             tv_province.setTextColor(mContext.getResources().getColor(R.color.text_black_high));
@@ -322,7 +319,7 @@ public class AreaSelector {
         });
     }
 
-    public AreaSelector showSelector(){
+    public AreaSelector build(){
 
         if(mItemClickListener ==null){
             setDefaultData();
@@ -332,6 +329,10 @@ public class AreaSelector {
             Toast.makeText(mContext,"请先初始化数据",Toast.LENGTH_SHORT).show();
         }
 
+        return this;
+    }
+
+    public void showSelector(){
         Window win = dialog.getWindow();
         assert win != null;
         win.setGravity(Gravity.BOTTOM);
@@ -341,15 +342,16 @@ public class AreaSelector {
         win.setWindowAnimations(R.style.dialogBottomInStyle);
         win.setAttributes(lp);
         dialog.show();
+    }
+
+    public AreaSelector setOnItemClickListener(OnSelectorItemClickListener itemClickListener){
+        mItemClickListener = itemClickListener;
         return this;
     }
 
-    public void setOnItemClickListener(OnSelectorItemClickListener itemClickListener){
-        mItemClickListener = itemClickListener;
-    }
-
-    public void setOnSelectedResultListener(OnSelectedResultListener resultListener){
+    public AreaSelector setOnSelectedResultListener(OnSelectedResultListener resultListener){
         mResultListener = resultListener;
+        return this;
     }
 
 }
