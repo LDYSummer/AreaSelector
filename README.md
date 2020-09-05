@@ -20,27 +20,27 @@
 #### dependency
 ```javascript
   dependencies {
-      implementation 'com.github.LDYSummer:AreaSelector:1.0.0'
+      implementation 'com.github.LDYSummer:AreaSelector:1.0.1'
   }
 ```
 ### 使用
 #### 默认使用国家统计数据 设置setOnSelectedResultListener 返回省/市/区(县)/街道 实时改变地址text 未选为空字符串
 ```javascript
     new AreaSelector(this)
-            .showSelector()
             .setOnSelectedResultListener(new OnSelectedResultListener() {
                 @Override
                 public void SelectedData(String province, String city, String area, String street) {
                     tv_address.setText(new StringBuilder().append(province).append(city).append(area).append(street));
                 }
-            });
+            })
+            .build()
+            .showSelector();
 
 ```
 
 #### 自定义数据
 ```javascript
     new AreaSelector(this)
-            .showSelector()
             .setOnItemClickListener(new OnSelectorItemClickListener() {
                 @Override
                 public List<AreaBean> setProvinceList() {
@@ -72,7 +72,9 @@
                 public void setOnStreetSelected(AreaBean areaBean, int position) {
                     ...
                 }
-            });
+            })
+            .build()
+            .showSelector();
 ```
 
 #### AreaBean
